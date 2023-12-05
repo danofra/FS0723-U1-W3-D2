@@ -215,10 +215,15 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-const oldFilms = function (movies) {
-  for (let i = 0; i < movies.length; i++) {
-    const oldFilm = movies.Year[i];
-  }
+const oldFilms = function () {
+  let old = movies[0];
+  movies.forEach((movieOld) => {
+    If(parseInt(movieOld.Year) < parseInt(old.Year));
+    {
+      old = movieOld;
+    }
+  });
+  console.log(old);
 };
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
@@ -229,9 +234,10 @@ console.log(moviesLength);
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 const namesOfFilms = movies.map((names) => {
-  return movies.Title;
+  return names.Title;
 });
 console.log(namesOfFilms);
+
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
@@ -239,22 +245,23 @@ console.log(namesOfFilms);
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-const str = movies.Year;
-const sumOfYears = str.reduce((acc, current) => {
-  return acc + current;
-}, 0);
-console.log(sumOfYears);
+const sumAllTheYears = (str) => {
+  return str.reduce((acc, current) => acc + parseInt(current.Year), 0);
+};
+console.log(sumAllTheYears(movies));
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 const favorFilm = movies.find((movie) => {
-  return movies.imdbID === "tt4154756";
+  return movie.imdbID === "tt4154756";
 });
 console.log(favorFilm);
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
 const favorFilmI = movies.findIndex((movie) => {
-  return movies.Year === "1990";
+  return movie.Year === "1990";
 });
 console.log(favorFilmI);
