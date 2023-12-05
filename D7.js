@@ -223,11 +223,15 @@ const oldFilms = function (movies) {
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-
+let moviesLength = movies.length;
+console.log(moviesLength);
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-
+const namesOfFilms = movies.map((names) => {
+  return movies.Title;
+});
+console.log(namesOfFilms);
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
@@ -235,11 +239,22 @@ const oldFilms = function (movies) {
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-
+const str = movies.Year;
+const sumOfYears = str.reduce((acc, current) => {
+  return acc + current;
+}, 0);
+console.log(sumOfYears);
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-
+const favorFilm = movies.find((movie) => {
+  return movies.imdbID === "tt4154756";
+});
+console.log(favorFilm);
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+const favorFilmI = movies.findIndex((movie) => {
+  return movies.Year === "1990";
+});
+console.log(favorFilmI);
