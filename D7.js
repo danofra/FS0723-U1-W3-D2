@@ -217,17 +217,15 @@ const movies = [
 */
 
 const oldFilms = function (movie) {
-  let old = movies[0];
+  let old = movie[0];
   movie.forEach((movieOld) => {
-    If(parseInt(movieOld.Year) < parseInt(old.Year));
-    {
+    if (parseInt(movieOld.Year) < parseInt(old.Year)) {
       old = movieOld;
     }
   });
   return old;
 };
 console.log(oldFilms(movies));
-//errore non capisco perchè
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
